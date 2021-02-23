@@ -96,6 +96,7 @@ class Company {
 
     query += " ORDER BY name";
     const companiesRes = await db.query(query, queryValues);
+    console.log(companiesRes.rows)
     return companiesRes.rows;
   }
 

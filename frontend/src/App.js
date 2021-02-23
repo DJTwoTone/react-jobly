@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import JoblyApi from './JoblyApi';
 
 function App() {
+  
+  useEffect(() => {
+    async function getCompany() {
+      const res = await JoblyApi.getCompany("hall-davis")
+      console.log(res);
+
+    }
+    getCompany();
+  })
+
+  useEffect(() => {
+    async function getCompanies() {
+      const res = await JoblyApi.getCompanies();
+      console.log(res);
+
+    }
+    getCompanies();
+
+  })
+
+  useEffect(() => {
+    async function getJob() {
+      const res = await JoblyApi.getJob(7);
+      console.log(res);
+    }
+    getJob();
+  })
+
+  useEffect(() => {
+    async function getJobs() {
+      const res = await JoblyApi.getJobs();
+      console.log(res);
+    }
+    getJobs();
+  })
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
     </div>
   );
 }

@@ -1,0 +1,48 @@
+App
+    Navigation:
+    State = logged in or out
+    Props = none
+        Home:
+        Login:
+        Signup:
+
+        Home:
+        Companies:
+        Jobs:
+        Profile:
+        Logout:
+    Routes:
+        Home:
+            State = none
+            Props = user info if logged in
+
+        Companies:
+                State =    
+                Props =
+            Search:
+                State =    
+                Props =
+            CompaniesList:
+                State =    
+                Props =
+                Companycards: Name/Description/logo - links to job list 
+                State =    
+                Props =
+        Jobs:
+                State =    
+                Props =
+            Search:
+                State =    
+                Props =
+            JobsList:
+                State =    
+                Props =
+                Jobcards: Title/Salary/Apply Button
+                 State =    
+                Props =
+        Profile:
+            State =    
+            Props =
+            form: Username(uneditable)/Firstname/Lastname/email/password(to confirm/doesn't change)
+                State =    
+                Props =
