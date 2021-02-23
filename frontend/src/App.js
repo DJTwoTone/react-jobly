@@ -1,5 +1,9 @@
 import React, { useEffect } from 'react';
 import JoblyApi from './JoblyApi';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './Routes';
+
+
 
 function App() {
   
@@ -39,9 +43,14 @@ function App() {
   })
   
   return (
-    <div className="App">
 
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        {/* <Nav /> */}
+        <Routes />
+      </div>
+    
+    </BrowserRouter>
   );
 }
 
