@@ -3,7 +3,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
-import Company from '/Company';
+import Company from './Company';
 import Companies from './Companies';
 import Jobs from './Jobs';
 import Login from './Login';
@@ -48,3 +48,5 @@ function Routes() {
         </div>
     )
 }
+
+export default Routes;
