@@ -17,15 +17,15 @@ function App() {
     getCompany();
   })
 
-  useEffect(() => {
-    async function getCompanies() {
-      const res = await JoblyApi.getCompanies();
-      console.log(res);
+  // useEffect(() => {
+  //   async function getCompanies() {
+  //     const res = await JoblyApi.getCompanies();
+  //     console.log(res);
 
-    }
-    getCompanies();
+  //   }
+  //   getCompanies();
 
-  })
+  // })
 
   useEffect(() => {
     async function getJob() {

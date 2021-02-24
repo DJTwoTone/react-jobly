@@ -43,7 +43,7 @@ class JoblyApi {
   //:TODO do something about the search
   
   static async getCompanies(search) {
-      //serach => minEmployees, maxEmployees, name
+
       let res = await this.request(`companies`, search)
       return res.companies;
       
@@ -60,7 +60,7 @@ class JoblyApi {
     //:TODO do something about the search
 
     static async getJobs(search) {
-        //search => minSalary, hasEquity, title
+        console.log(search);
         let res = await this.request(`jobs`, search)
         return res.jobs;
     }
