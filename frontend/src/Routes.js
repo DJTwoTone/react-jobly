@@ -9,6 +9,7 @@ import Jobs from './Jobs';
 import Login from './Login';
 import Signup from './Signup';
 import Profile from './Profile';
+import ProtectedRoute from './ProtectedRoutes';
 
 
 
@@ -20,29 +21,29 @@ function Routes({ setToken }) {
                     <Home />
                 </Route>
 
-                <Route exact path='/companies/:handle'>
-                    <Company />
-                </Route>
-
-                <Route exact path='/companies'>
-                    <Companies />
-                </Route>
-
-                <Route exact path='/jobs'>
-                    <Jobs />
-                </Route>
-
                 <Route exact path='/login'>
                     <Login setToken={setToken}/>
                 </Route>
 
-                <Route exact path='/signup'>
+                <ProtectedRoute exact path='/signup'>
                     <Signup setToken={setToken}/>
-                </Route>
+                </ProtectedRoute>
 
-                <Route exact path='/profile'>
+                <ProtectedRoute exact path='/companies/:handle'>
+                    <Company />
+                </ProtectedRoute>
+
+                <ProtectedRoute exact path='/companies'>
+                    <Companies />
+                </ProtectedRoute>
+
+                <ProtectedRoute exact path='/jobs'>
+                    <Jobs />
+                </ProtectedRoute>
+
+                <ProtectedRoute exact path='/profile'>
                     <Profile />
-                </Route>
+                </ProtectedRoute>
 
             </Switch>
         </div>
