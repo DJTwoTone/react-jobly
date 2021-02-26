@@ -43,10 +43,8 @@ class JoblyApi {
   //:TODO do something about the search
   
   static async getCompanies(search) {
-
       let res = await this.request(`companies`, search)
-      return res.companies;
-      
+      return res.companies;  
     }
     
     /** Get details on a company by handle. */
@@ -71,7 +69,15 @@ class JoblyApi {
         return res.job;
     }
 
+    static async login(data) {
+      let res = await this.request('auth/token', data, 'post')
+      return res.token;
+    }
 
+    static async signup(data) {
+      let res = await this.request('auth/register', data, 'post')
+      return res.token;
+    }
 
   // obviously, you'll add a lot here ...
 }
