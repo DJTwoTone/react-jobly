@@ -12,7 +12,7 @@ import Profile from './Profile';
 
 
 
-function Routes() {
+function Routes({ setToken }) {
     return (
         <div>
             <Switch>
@@ -33,11 +33,11 @@ function Routes() {
                 </Route>
 
                 <Route exact path='/login'>
-                    <Login />
+                    <Login setToken={setToken}/>
                 </Route>
 
                 <Route exact path='/signup'>
-                    <Signup />
+                    <Signup setToken={setToken}/>
                 </Route>
 
                 <Route exact path='/profile'>

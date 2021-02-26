@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
+import { useHistory} from 'react-router-dom';
 import JoblyApi from './JoblyApi';
 import ErrorAlert from './ErrorAlert'
 
 
-function Login() {
+function Login({ setToken }) {
     
+    const history = useHistory();
+
     const [loginForm, setLoginForm] = useState({
         username: "",
         password: "",
         errors: []
     })
 
-    function handleChange(e) {
-        const { name, value } = e.target;
+    function handleChange(evt) {
+        const { name, value } = evt.target;
         setLoginForm(info => ({
             ...info,
             [name]: value
         }))
-    }
+    };
 
-    async function handleSubmit(e) {
-        e.preventDefault();
+    async function handleSubmit(evt) {
+        evt.preventDefault();
         let data = {
             username: loginForm.username,
             password: loginForm.password
@@ -31,13 +34,13 @@ function Login() {
             let token = await JoblyApi.login(data);
             console.log('you are logged in');
             console.log(token);
-            //set the token
-            //push the history
+            setToken(token);
+            history.push('/');
 
         } catch (err) {
             return setLoginForm(info => ({
                 ...info,
-                err
+                errors: err
 
             }))
         }

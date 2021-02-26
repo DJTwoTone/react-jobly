@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import JoblyApi from './JoblyApi';
 import ErrorAlert from './ErrorAlert';
 
 
-function Signup() {
+function Signup({ setToken }) {
+
+    const history = useHistory();
 
     const [signupForm, setSignupForm] = useState({
         username: '',
@@ -37,8 +40,8 @@ function Signup() {
             let token = await JoblyApi.signup(data);
             console.log('you have signed up');
             console.log(token)
-            //set the token 
-            //push thje history
+            setToken(token)
+            history.push('/')
 
             
         } catch (err) {
