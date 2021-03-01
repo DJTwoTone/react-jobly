@@ -32,8 +32,6 @@ function Login({ setToken }) {
         try {
             
             let token = await JoblyApi.login(data);
-            console.log('you are logged in');
-            console.log(token);
             setToken(token);
             history.push('/');
 

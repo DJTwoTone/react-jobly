@@ -21,8 +21,8 @@ function App() {
       try {
 
         let { username } = decode(token);
-        let fethchedUser = await JoblyApi.getUser(username);
-        setUser(fethchedUser)
+        let fetchedUser = await JoblyApi.getUser(username);
+        setUser(fetchedUser)
 
 
       } catch (err) {

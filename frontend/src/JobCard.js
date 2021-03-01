@@ -1,6 +1,6 @@
 import React from 'react';
 
-function JobCard({ info = {} }) {
+function JobCard({ info = {}, handleApply }) {
     const { title, salary, equity} = info;
 
     return (
@@ -11,6 +11,14 @@ function JobCard({ info = {} }) {
                 </h4>
                 <p>Salary: {salary}</p>
                 <p>Equity: {equity}</p>
+
+                <button
+                    className='btn btn-secondary float-right'
+                    onClick={handleApply}
+                    disabled={info.state}
+                >
+                    {info.state ? "APPLIED" : "APPLY"}
+                </button>
             </div>
         </div>)
 }

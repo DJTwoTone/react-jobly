@@ -38,8 +38,6 @@ function Signup({ setToken }) {
         try {
 
             let token = await JoblyApi.signup(data);
-            console.log('you have signed up');
-            console.log(token)
             setToken(token)
             history.push('/')
 

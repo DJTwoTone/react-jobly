@@ -17,7 +17,7 @@ function Home() {
                 </p>
                 {user ? (
                     <h3>
-                        WELCOME BACK {user.firstName || user.username}
+                        WELCOME BACK {user.firstName}
                     </h3>
                 ) :(
                     <div>

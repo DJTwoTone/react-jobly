@@ -1,4 +1,5 @@
 import React from 'react';
+import { applyToJob } from '../../backend/models/user';
 import CompanyCard from './CompanyCard';
 import JobCard from './JobCard';
 
@@ -10,6 +11,8 @@ function CardList({cardType, cards = []}) {
             <p>Sorry, no results where found</p>
         </div>)
     }
+
+    
 
     
     
@@ -34,6 +37,7 @@ function CardList({cardType, cards = []}) {
                     info={card}
                     key={idx}
                     idx={idx}
+                    handleApply={() => applyToJob(idx)}
                 />
             ))}
 

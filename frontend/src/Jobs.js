@@ -19,12 +19,18 @@ function Jobs() {
         let gottenJobs = await JoblyApi.getJobs(search);
         setJobs(gottenJobs)
     }
+
+    async function apply(idx) {
+        let jobId = jobs[idx].id;
+        let state = await JoblyApi.applyToJob(jobId);
+        
+    }
     
     
     return (
         <div>
             <Search searchType='jobs' handleSearch={handleSearch}/>
-            <CardList cardType='job' cards={jobs} />
+            <CardList cardType='job' cards={jobs} apply={apply} />
         </div>
     )
 }

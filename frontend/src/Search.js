@@ -21,49 +21,49 @@ function Search({ searchType, handleSearch }) {
 
     return (searchType === 'companies') ? (
         <div className='Search'>
-            <form className='form-inline' onSubmit={handleSubmit}>
+            <form className='form-inline space-between' onSubmit={handleSubmit}>
                 <input 
-                    className='form-control'
+                    className='form-control mx-2'
                     name='name'
                     placeholder="What Company Are You Looking For?"
                     value={search.name}
                     onChange={handleChange}
                 />
                 <input 
-                    className='form-control'
+                    className='form-control mx-2'
                     name='minEmployees'
                     placeholder="How Small Can the Company Be?"
                     value={search.minEmployees}
                     onChange={handleChange}
                 />
                 <input 
-                    className='form-control'
+                    className='form-control mx-2'
                     name='maxEmployees'
                     placeholder="How Big Can the Company Be?"
                     value={search.maxEmployees}
                     onChange={handleChange}
                 />
-                <button className='btn' type='submit'>SEARCH</button>
+                <button className='btn btn-primary mx-2' type='submit'>SEARCH</button>
             </form>
         </div>
     ) : (
         <form className='form-inline' onSubmit={handleSubmit}>
         <input 
-            className='form-control'
+            className='form-control mx-2'
             name='title'
             placeholder="What Kind of Job Are You Looking For?"
             value={search.title}
             onChange={handleChange}
         />
         <input 
-            className='form-control'
+            className='form-control mx-2'
             name='minSalary'
             placeholder="How Little Can They Pay You?"
             value={search.minSalary}
             onChange={handleChange}
         />
         <input 
-            className='form-control'
+            className='form-control mx-2'
             type='checkbox'
             name='hasEquity'
             label='Equity Available'
@@ -72,7 +72,7 @@ function Search({ searchType, handleSearch }) {
             onChange={handleChange}
         />
         <label>Equity Available</label>
-        <button className='btn' type='submit'>SEARCH</button>
+        <button className='btn btn-primary mx-2' type='submit'>SEARCH</button>
     </form>
     )
 
