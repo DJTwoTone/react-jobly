@@ -1,10 +1,10 @@
 import React from 'react';
-import { applyToJob } from '../../backend/models/user';
 import CompanyCard from './CompanyCard';
 import JobCard from './JobCard';
 
-function CardList({cardType, cards = []}) {
-
+function CardList({cardType, cards = [], apply = () => null}) {
+           
+    
     if (!cards.length) {
         return (
         <div>
@@ -12,10 +12,6 @@ function CardList({cardType, cards = []}) {
         </div>)
     }
 
-    
-
-    
-    
     return (cardType === 'company') ? (
         <div>
 
@@ -37,7 +33,7 @@ function CardList({cardType, cards = []}) {
                     info={card}
                     key={idx}
                     idx={idx}
-                    handleApply={() => applyToJob(idx)}
+                    handleApply={() => apply(idx)}
                 />
             ))}
 

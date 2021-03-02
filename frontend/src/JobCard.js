@@ -2,7 +2,7 @@ import React from 'react';
 
 function JobCard({ info = {}, handleApply }) {
     const { title, salary, equity} = info;
-
+    
     return (
         <div className='Card card'>
             <div className='card-body'>
